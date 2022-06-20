@@ -12,7 +12,7 @@ const movieInfo = () => {
     if (state.imdb) {
       setload(true);
       await axios
-        .get(`http://www.omdbapi.com/?apikey=a1ccce30&i=${state.imdb}`)
+        .get(`https://www.omdbapi.com/?apikey=a1ccce30&i=${state.imdb}`)
         .then((res) => {
           setaola({
             Poster: res.data.Poster,

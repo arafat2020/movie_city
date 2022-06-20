@@ -14,12 +14,15 @@ const Image = () => {
     
     useEffect(() => {
            
-                axios.get(`http://www.omdbapi.com/?apikey=a1ccce30&s=${ctx.reasult}&page=${ctx.page}`).then(res => {
-                    setRes([...rest, ...res.data.Search])
-                    setLoad(false)
-                    console.log(res.data)
-                   
-                })
+                axios
+                  .get(
+                    `https://www.omdbapi.com/?apikey=a1ccce30&s=${ctx.reasult}&page=${ctx.page}`
+                  )
+                  .then((res) => {
+                    setRes([...rest, ...res.data.Search]);
+                    setLoad(false);
+                    console.log(res.data);
+                  });
             
         }, [ctx.page])
     console.log(!ctx.total!==rest.length,typeof(ctx.total),typeof(rest.length))

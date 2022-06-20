@@ -20,7 +20,7 @@ const main = () => {
       } else {
         axios
           .get(
-            `http://www.omdbapi.com/?apikey=a1ccce30&s=${state.reasult}&page=${state.page}`
+            `https://www.omdbapi.com/?apikey=a1ccce30&s=${state.reasult}&page=${state.page}`
           )
           .then((res) => {
             if (res.data.Response) {

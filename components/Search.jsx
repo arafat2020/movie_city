@@ -13,16 +13,20 @@ const Search = () => {
     useEffect(() => {
         if (search) {
             
-            axios.get(`http://www.omdbapi.com/?apikey=a1ccce30&s=${search}&page=${state.page}`
-            ).then(res => {
+            axios
+              .get(
+                `https://www.omdbapi.com/?apikey=a1ccce30&s=${search}&page=${state.page}`
+              )
+              .then((res) => {
                 if (res.data.Response) {
-                    setRes(res.data.Search)
-                    state.setTotal(res.data.totalResults)
+                  setRes(res.data.Search);
+                  state.setTotal(res.data.totalResults);
                 }
-            console.log(res)
-        }).catch(err => {
-            console.log(err)
-        })
+                console.log(res);
+              })
+              .catch((err) => {
+                console.log(err);
+              });
            
         } else {
             setRes(null)
